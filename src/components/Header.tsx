@@ -9,6 +9,7 @@ import {
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+import { LogOut } from "lucide-react";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -17,7 +18,7 @@ const Header = () => {
   return (
     <nav className="py-4 flex justify-between items-center">
       <Link to="/">
-        <img src="/public/logo.png" className="h-16" alt="tinky-link Logo" />
+        <img src="logo.png" className="h-16" alt="tinky-link Logo" />
       </Link>
 
       <div>
@@ -25,7 +26,7 @@ const Header = () => {
           <Button onClick={() => navigate("/auth")}>Login</Button>
         ) : (
           <DropdownMenu>
-            <DropdownMenuTrigger>
+            <DropdownMenuTrigger className="rounded-full overflow-hidden">
               <Avatar>
                 <AvatarImage src="https://github.com/shadcn.png" />
                 <AvatarFallback>CN</AvatarFallback>
@@ -38,6 +39,10 @@ const Header = () => {
               <DropdownMenuItem>Billing</DropdownMenuItem>
               <DropdownMenuItem>Team</DropdownMenuItem>
               <DropdownMenuItem>Subscription</DropdownMenuItem>
+              <DropdownMenuItem className="text-red-400">
+                <LogOut className="h-4 w-4 text-red-400" />
+                <span>Logout</span>
+              </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         )}
