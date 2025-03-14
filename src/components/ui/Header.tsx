@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import { Button } from "./ui/button";
+import { Button } from "./button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,14 +7,14 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "./ui/dropdown-menu";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
+} from "./dropdown-menu";
+import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import { LogOut } from "lucide-react";
 
 const Header = () => {
   const navigate = useNavigate();
   // dummy variable
-  const user = true;
+  const user = false;
   return (
     <nav className="py-4 flex justify-between items-center">
       <Link to="/">
